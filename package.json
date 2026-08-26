@@ -1,0 +1,58 @@
+{
+  "name": "package-json-repo-links",
+  "displayName": "package.json Repo Links",
+  "description": "Ctrl/Cmd-click dependency names in package.json to open the package's GitHub repository at the exact installed version.",
+  "version": "0.1.0",
+  "publisher": "emereum",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "package.json",
+    "github",
+    "dependencies",
+    "lockfile",
+    "npm"
+  ],
+  "activationEvents": [
+    "onLanguage:json",
+    "onLanguage:jsonc"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "package.json Repo Links",
+      "properties": {
+        "packageJsonRepoLinks.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Ctrl/Cmd-clickable dependency names in package.json that open the package's GitHub repository at the installed version."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p . && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs",
+    "watch": "tsc -p . --watch",
+    "pretest": "tsc -p .",
+    "test": "node --test \"out/test/**/*.test.js\"",
+    "package": "vsce package --no-dependencies --allow-missing-repository",
+    "vscode:prepublish": "tsc -p . && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs --minify"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "yaml": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.5.0"
+  }
+}
