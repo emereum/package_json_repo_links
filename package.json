@@ -36,12 +36,12 @@
     }
   },
   "scripts": {
-    "compile": "tsc -p . && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs",
+    "compile": "tsc -p . && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs --main-fields=module,main && node scripts/check-bundle.js",
     "watch": "tsc -p . --watch",
     "pretest": "tsc -p .",
     "test": "node --test \"out/test/**/*.test.js\"",
     "package": "vsce package --no-dependencies --allow-missing-repository",
-    "vscode:prepublish": "tsc -p . && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs --minify"
+    "vscode:prepublish": "tsc -p . && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs --main-fields=module,main --minify && node scripts/check-bundle.js"
   },
   "packageManager": "pnpm@11.9.0",
   "dependencies": {
