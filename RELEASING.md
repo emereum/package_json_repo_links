@@ -42,18 +42,10 @@ the GitHub Release with the `.vsix` is always created.
 ### 3. Repo housekeeping after pushing to GitHub
 
 - Replace `OWNER` in the README's curl install command with the actual
-  GitHub owner/org name.
-- Add a `repository` field to `package.json`, e.g.:
-
-  ```json
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OWNER/package-json-repo-links.git"
-  }
-  ```
-
-  Then remove the `--allow-missing-repository` flag from the `package`
-  script in `package.json`.
+  GitHub owner/org name (done for
+  [`emereum/package_json_repo_links`](https://github.com/emereum/package_json_repo_links)).
+- Add a `repository` field to `package.json` (done), then remove
+  `--allow-missing-repository` from the `package` script.
 
 ## Releasing a new version
 

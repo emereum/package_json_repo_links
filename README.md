@@ -29,7 +29,7 @@ Resolution is lazy (nothing happens until you activate a link) and cached per se
 **From a GitHub Release (manual, no auto-update):**
 
 ```bash
-curl -LO https://github.com/OWNER/package-json-repo-links/releases/latest/download/package-json-repo-links-0.1.0.vsix
+curl -LO https://github.com/emereum/package_json_repo_links/releases/latest/download/package-json-repo-links-0.1.0.vsix
 cursor --install-extension package-json-repo-links-0.1.0.vsix   # or `code ...`
 ```
 
@@ -58,7 +58,7 @@ pnpm run package   # build the installable .vsix
 
 Press <kbd>F5</kbd> in VS Code to launch an Extension Development Host with the extension loaded.
 
-See `RELEASING.md` in the repository for the one-time publishing setup (Open VSX / VS Code Marketplace tokens) and the release flow.
+See [RELEASING.md](RELEASING.md) for the one-time publishing setup (Open VSX / VS Code Marketplace tokens) and the release flow.
 
 ### Tests
 
