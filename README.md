@@ -1,6 +1,6 @@
 # package.json Repo Links
 
-A VS Code extension that makes dependency names in `package.json` **Ctrl/Cmd-clickable**. Clicking a dependency opens its GitHub repository at the **exact installed version** — not the semver range you declared.
+A Cursor extension that makes dependency names in `package.json` **Ctrl/Cmd-clickable**. Clicking a dependency opens its GitHub repository at the **exact installed version** — not the semver range you declared.
 
 ## How it works
 
