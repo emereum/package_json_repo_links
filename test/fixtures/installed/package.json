@@ -1,0 +1,7 @@
+{
+  "name": "installed-fixture",
+  "private": true,
+  "dependencies": {
+    "@scope/pkg": "^2.0.0"
+  }
+}

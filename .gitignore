@@ -2,3 +2,7 @@ node_modules/
 out/
 dist/
 *.vsix
+
+# Test fixtures that simulate locally installed packages.
+!test/fixtures/**/node_modules/
+!test/fixtures/**/node_modules/**
